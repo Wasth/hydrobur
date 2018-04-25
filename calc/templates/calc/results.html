@@ -1,0 +1,42 @@
+{% extends 'calc/index.html' %}
+{% block content %}
+<div class="container mt-3 mb-3">
+	<div class="card card-body">
+		{% if result %}
+		<p>
+			Расход бурового раствора = {{ result.q }} м<sup>3</sup>/с <br>
+			Рабочее давление буровых насосов = {{ result.p0 }} Мпа <br>
+		</p>
+		<p>
+			<div class="row">
+			<div class="col-xl-6 col-lg-6 col-md-12">
+				Для бурильных труб<br>
+				He<sub>т</sub> = {{ result.het }} * 10<sup>5</sup><br>
+				Re<sub>т</sub> = {{ result.ret }} * 10<sup>3</sup><br>
+			</div>
+			<div class="col-xl-6 col-lg-6 col-md-12">
+				Для кольцевого пространства<br>
+				He<sub>к.п</sub> = {{ result.hekp }} * 10<sup>5</sup><br>
+				Re<sub>к.п</sub> = {{ result.rekp }} * 10<sup>3</sup><br>
+			</div>
+		</div>	
+		</p>
+		<p>
+			Суммарные потери давления в циркуляционной системе = {{ result.psum }} МПа
+		</p>
+		<p>
+			Гидроразрыва пластов в процессе циркуляции бурового раствора в скважине
+            {% if result.razriv %}
+                произойдет
+            {% else %}
+                не произойдет
+            {% endif %}
+		</p>
+		<p>
+			Диаметр насадки = {{ result.dn }} м<br>
+			Фактический перепад давления на долоте = {{ result.pdf }} МПа
+		</p>
+	</div>
+	{% endif %}
+</div>		
+{% endblock %} 

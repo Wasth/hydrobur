@@ -1,0 +1,29 @@
+{% extends 'calc/index.html' %}
+{% block content %}
+<div class="container mt-3 mb-3">
+	<div class="card card-body">
+    {% if result_set %}
+		<table class="table">
+			<tr>
+				<th>#</th>
+				<th>Пользователь</th>
+				<th>Дата и время</th>
+				<th></th>
+			</tr>
+            {% for result in result_set %}
+			<tr>
+				<td>{{ result.id }}</td>
+				<td>{{ result.author }}</td>
+				<td>{{ result.result_datetime }}</td>
+				<td>
+					<a class="btn btn-primary" href='{% url 'result' result.id %}'>Подробнее</a>
+				</td>
+			</tr>
+            {% endfor %}
+		</table>
+    {% else %}
+        <p>Нету раннее расчитанных параметров на данном аккаунте.</p>
+    {% endif %}
+	</div>
+</div>	
+{% endblock %} 

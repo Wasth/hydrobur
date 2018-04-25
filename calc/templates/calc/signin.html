@@ -1,0 +1,24 @@
+{% extends 'calc/index.html' %}
+{% block content %}
+<div class="container mt-3 mb-3">
+	<div class="card card-body">
+		<form method='post' class='ml-auto mr-auto container' id='authForm'>
+            {% csrf_token %}
+			<h3>Авторизация</h3>
+			{% if errors  %}
+				{% for error in errors %}
+				<div class="alert alert-danger" role="alert">
+					{{ error }}
+				</div>
+				{% endfor %}
+			{% endif %}
+			<label>Логин</label>
+			<input type="text" class='form-control' name="login">
+			<label>Пароль</label>
+			<input type="password" class='form-control' name="password">
+			<button class="btn btn-primary float-right mt-3" type="submit">Войти</button>
+			<a href="{% url 'signup' %}" class='float-right mt-4 mr-3'>Регистрация</a>
+		</form>
+	</div>
+</div>
+{% endblock %} 

@@ -1,0 +1,25 @@
+body {
+	background-color: #f1f1f1;
+	/*background-image: url('../img/bg3.jpg');*/
+	background-repeat: no-repeat;
+	background-size: cover;
+	/*background-position: center center;*/
+}
+#authForm {
+	max-width: 400px;
+}
+.input-group-text {
+	text-align: center;
+	display: inline-block;
+	width: 75px;
+}
+.input-group-prepend {
+	text-align: center
+}
+#bg {
+	height: 200px;
+	background-image: url('../img/bg4.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+}

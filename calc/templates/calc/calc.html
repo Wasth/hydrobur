@@ -1,0 +1,202 @@
+{% extends 'calc/index.html' %}
+	{% block content %}
+	<div class="container mt-3 mb-3">
+		<div class="card card-body">
+			<form method='post' action="{% url 'result' %}">
+				{% csrf_token %}
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Глубина скважины</label>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">м</span>
+							</div>
+							{{ calcform.glubina }}
+						</div>
+					</div>							
+				</div>
+
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Диаметр гидромоторного долота</label>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">мм</span>
+							</div>
+							{{ calcform.dgidromotor }}
+						</div>
+					</div>							
+				</div>
+
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Тип турбобура</label>
+					<div class="col">
+						{{ calcform.turboburtype }}
+					</div>							
+				</div>
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Диаметр стояка</label>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">м</span>
+							</div>
+							{{ calcform.dstoyak }}
+						</div>
+						
+					</div>							
+				</div>
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Диаметр бурового шланга</label>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">м</span>
+							</div>
+							{{ calcform.dburshlang }}
+						</div>
+					</div>							
+				</div>
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Диаметр ведущей трубы</label>
+					<div class="col">
+						<div class="input-group">
+							<div class="input-group-prepend">
+								<span class="input-group-text">м</span>
+							</div>
+							{{ calcform.dvedtruba }}
+						</div>
+						
+					</div>							
+				</div>
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Диаметр вертлюга</label>
+					<div class="input-group col">
+						<div class="input-group-prepend">
+							<span class="input-group-text">м</span>
+						</div>
+						{{ calcform.dvertlug }}
+					</div>									
+				</div>
+				<div class="form-group row">
+					<label class='col-lg-4 col-xl-4 col-md-12'>Насосы </label>
+					<div class="input-group col col-lg col-md col-md-9 col-sm-12">
+						<div class="input-group-prepend">
+							<span class="input-group-text rounded-left">тип</span>
+						</div>
+						{{ calcform.nasos_type }}
+					</div>
+					<div class="input-group col-lg col-xl col-md-3  col-sm-12 mt-xs-0 mt-md-0 mt-lg-0 mt-sm-3 mt-3">
+						<div class="input-group-prepend ml-xl-2 ml-lg-2 ml-md-2 ml-sm-0 ml-0">
+							<span class="input-group-text rounded-left">кол-во</span>
+						</div>
+						{{ calcform.nasos_count }}
+					</div>
+				</div>	
+
+				<div class="form-group">
+					<label>Бурильные трубы:</label>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Диаметр</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">мм</span>
+									</div>
+									{{ calcform.d_bt }}
+								</div>
+							</div>
+					</div>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Толщина стенки</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">мм</span>
+									</div>
+									{{ calcform.t_bt }}
+								</div>
+							</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Утяжеленные бурильные трубы:</label>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Диаметр</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">мм</span>
+									</div>
+									{{ calcform.d_ubt }}
+								</div>
+							</div>
+					</div>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Внутренний диаметр</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">мм</span>
+									</div>
+									{{ calcform.vd_ubt }}
+								</div>
+							</div>
+					</div>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Длина</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">м</span>
+									</div>
+									{{ calcform.dl_ubt }}
+								</div>
+							</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Нагнетательный трубопровод:</label>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Длина</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">м</span>
+									</div>
+									{{ calcform.dl_nt }}
+								</div>
+							</div>
+					</div>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl-3 col-md-12'>Диаметр</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">мм</span>
+									</div>
+									{{ calcform.d_nt }}
+								</div>
+							</div>
+					</div>
+					<div class="ml-md-0 ml-xl-3 ml-xs-3 mb-3 row">
+						<label class='col-lg-3 col-xl3 col-md-12'>Толщина стенки</label>
+							<div class="col">
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">мм</span>
+									</div>
+									{{ calcform.t_nt }}
+								</div>
+							</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<button class="btn btn-success float-right">Расчитать параметры</button>
+				</div>
+			</form>	
+		</div>
+	</div>
+{% endblock %}

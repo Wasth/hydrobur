@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Гидравлическая программа бурения скважин</title>
+	<meta charset="utf-8">
+	<meta name='viewport' content='width=device-width'>
+	<link rel='icon' href="{% static 'calc/img/logo.png' %}">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'calc/css/style.css' %}">
+</head>
+<body>
+	<div id="menuPanel" class='container mt-3'>
+		<!-- <div id='bg' class='rounded-top'>
+			
+		</div> -->
+		<nav class="navbar navbar-dark bg-dark navbar-expand-lg rounded">
+				<div class="navbar-brand"><img src="{% static 'calc/img/logo.png' %}" width="30" height="30" class="d-inline-block align-top" alt=""> Hydrobur</div>
+				<button type='button' class="navbar-toggler" data-target="#myMenu" data-toggle="collapse"><span class="navbar-toggler-icon"></span></button>
+				<div class="collapse navbar-collapse" id="myMenu">
+                    {% if user.is_authenticated %}
+					<ul class='navbar-nav mr-auto'>
+						<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Главная</a></li>
+						<li class="nav-item"><a class='nav-link' href="{% url 'calc' %}">Рассчитать параметры</a></li>
+						<li class="nav-item"><a class='nav-link' href="{% url 'history' %}">История расчётов</a></li>
+                        <li class="nav-item"><a class='nav-link' href="{% url 'help' %}">Помощь</a></li>
+						<li class="nav-item"><a class='nav-link' href="{% url 'logout' %}">Выйти из аккаунта({{ user.username }})</a></li>
+					</ul>
+                    {% else %}
+                    <ul class='navbar-nav mr-auto'>
+						<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Главная</a></li>
+                        <li class="nav-item"><a class='nav-link' href="{% url 'help' %}">Помощь</a></li>
+						<li class="nav-item"><a class='nav-link' href="{% url 'signup' %}">Регистрация</a></li>
+						<li class="nav-item"><a class='nav-link' href="{% url 'signin' %}">Авторизация</a></li>
+					</ul>
+                    {% endif %}
+				</div>	
+			
+		</nav>
+	</div>
+	
+	{% block content %}
+	<div class="container mt-3 mb-3">
+		 <div class="card card-body">
+		 	<p>
+		 		<strong>Гидравлическая программа бурения скважины должна</strong> составляться с учетом опыта проводки скважин на данном месторождении и результатов анализа показателей работы буровых долот при различных режимах промывки скважин.
+		 	</p>
+		 	<p>
+		 		<strong>Гидравлической программой бурения скважин</strong> называется совокупность режимов промывки и других операций, связанных с гидравликой и обеспечивающих бурение скважин без осложнений или с минимумом осложнений, с максимально высоким качеством при заданных ограничениях по стоимости строительства скважин и выбору бурового оборудования. 
+		 	</p>  
+		 	<p>
+		 		Целью составления <strong>гидравлической программы бурения скважин</strong> является выбор оптимального режима промывки скважины, обеспечивающего наиболее эффективную отработку буровых долот при соблюдении требований и ограничений, обусловленных геологическими особенностями вскрываемого интервала, энергетическими, техническими и эксплуатационными характеристиками бурового оборудования и инструмента.
+		 	</p>
+ 			<p>
+				Основными задачами при составлении <strong>гидравлической программы бурения скважины</strong> являются выбор технологически необходимого расхода промывочной жидкости, оптимальной схемы очистки забоя и долота, скорости истечения жидкости из насадок при наиболее рациональном использовании гидравлической мощности буровых насосов.
+			</p>
+			<p>
+				Рассмотрены различные пути оптимизации <strong>гидравлической программы бурения скважин</strong> на месторождениях Коми АССР. 
+			</p>
+  			<p>
+ 				Таким образом, под <strong>гидравлической программой бурения скважин</strong> понимается рациональный выбор регулируемых показателей гидромеханических и тепловых процессов промывки ствола скважин, направленный на улучшение технико-экономических показателей бурового процесса при комплексном учете функциональных назначений буровых и тампонажных растворов в статическом и динамическом состояниях, горно-геологических и технико-технологических условий бурения.
+ 			</p>
+ 			<p>
+ 				Общие требования к методическому обеспечению <strong>гидравлических программ бурения скважин</strong>, обладающих всеми признаками многофакторных оптимизационных задач, заключаются в необходимости обоснованного выбора целевой функции и использовании при формализации ограничений обобщенных детерминированных моделей, адекватно и воспроизводимо описывающих физическую сущность гидромеханических и тепловых процессов - в бурящихся скважинах с учетом научных достижений в области технологии промывки и цементирования скважин.  
+ 			</p>
+ 			<p>
+ 				При составлении упрощенного оптимизированного варианта <strong>гидравлической программы бурения скважин</strong> целесообразно использование вычислительной техники, в частности программирующих микрокалькуляторов. 
+ 			</p>
+ 			<p>
+ 				Перечисленные общие требования к целевой функции и ограничениям оптимизационных задач определяют позиции методического обеспечения <strong>гидравлических программ бурения скважин</strong> как основы эффективного проектирования и управления процессом бурения скважин.
+ 			</p>
+ 			<p>
+ 				Режимы промывки скважин в первоначальном варианте также выбирают из опыта в соответствии с режимами, имевшими место при бурении аналогичного геологического разреза. В связи с тем, что <strong>гидравлическая программа бурения скважин</strong> неразрывно связана с показателями свойств буровых растворов, которые непрерывно изменяются при совершенствовании рецептуры, изменяется и режим промывки, оставаясь постоянным только после появления утвержденного регламента на буровой раствор.
+ 			</p>
+		 </div>
+	</div>
+	{% endblock %}
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+</body>
+</html>
