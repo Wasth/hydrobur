@@ -10,7 +10,7 @@ class CalcForm(forms.Form):
 		}))
 	dgidromotor = forms.FloatField(
 		required = True,
-		min_value=0,
+		min_value=3,
 		max_value=10000,
 		widget = forms.NumberInput(attrs={
 			'class':'form-control'
@@ -73,14 +73,14 @@ class CalcForm(forms.Form):
 		)
 	d_bt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
 		}))
 	t_bt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
@@ -88,21 +88,21 @@ class CalcForm(forms.Form):
 
 	d_ubt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
 		}))
 	vd_ubt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
 		}))
 	dl_ubt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
@@ -110,21 +110,21 @@ class CalcForm(forms.Form):
 
 	dl_nt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
 		}))
 	d_nt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'
 		}))
 	t_nt = forms.FloatField(
 		required=True,
-		min_value=0,
+		min_value=0.01,
 		max_value=100000,
 		widget=forms.NumberInput(attrs={
 			'class':'form-control'

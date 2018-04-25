@@ -64,19 +64,27 @@ def result(request, res_id=None):
 				p0 = float("%.2f" % p0)
 
 				# второй набор расчетов
-				het = (2.5 * 1100 * (vd_bt ** 2)) / (0.014 ** 2)
-				ret = (4 * q * 1100) / (3.14 * vd_bt * 0.014)
-				hekp = (2.5 * 1100.0 * (dgidromotor - d_bt) ** 2) / (0.014 ** 2)
-				rekp = (4 * q * 1100) / (3.14 * (dgidromotor + d_bt) * 0.014)
+				het = abs((2.5 * 1100 * (vd_bt ** 2)) / (0.014 ** 2))
+				ret = abs((4 * q * 1100) / (3.14 * vd_bt * 0.014))
+				hekp = abs((2.5 * 1100.0 * (dgidromotor - d_bt) ** 2) / (0.014 ** 2))
+				rekp = abs((4 * q * 1100) / (3.14 * (dgidromotor + d_bt) * 0.014))
 
 				if het > 100000:
 					het = '%.2f' % (het * 0.00001)
+				else:
+					het = '%.3f' % het
 				if ret > 10000:
 					ret = '%.1f' % (ret * 0.001)
+				else:
+					ret = '%.3f' % ret
 				if hekp > 100000:
 					hekp = '%.2f' % (hekp * 0.00001)
+				else:
+					hekp = '%.3f' % hekp
 				if rekp > 10000:
 					rekp = '%.1f' % (rekp * 0.001)
+				else:
+					rekp = '%.3f' % rekp
 
 				# третий набор расчетов
 				am = (stoyak.coef + vedtruba.coef + burshlang.coef + vertlug.coef) * (10 ** 4)
@@ -85,8 +93,8 @@ def result(request, res_id=None):
 				pm2 = am * 1100 * (q ** 2) * 0.000001
 				pt = (8 * 0.027 * dl_bt * 1100 * q ** 2) / ((3.14 ** 2) * (vd_bt ** 5)) * 0.000001
 				pubt = (8 * 0.0255 * dl_ubt * 1100 * q ** 2) / (3.14 ** 2 * vd_ubt ** 5) * 1000000000
-				pkpt = 0.000001 * ((8 * 0.038 * 1074 * 1100 * (q ** 2)) / (
-							(3.14 ** 2) * ((dgidromotor - d_bt) ** 3) * (dgidromotor + d_bt) ** 2))
+				pkpt = 0.000001 * ((8 * 0.038 * 1074 * 1100 * (q ** 2)) / abs(
+						(3.14 ** 2) * ((dgidromotor - d_bt) ** 3) * (dgidromotor + d_bt) ** 2))
 				pkpdv = 0.000001 * ((8 * 0.0395 * 26 * 1100 * q ** 2) / (
 							3.14 ** 2 * (dgidromotor - turbobur.d) ** 3 * (dgidromotor + turbobur.d) ** 2))
 				pkpubt = 0.000001 * ((8 * 0.039 * dl_ubt * 1100 * q ** 2) / (
@@ -104,7 +112,7 @@ def result(request, res_id=None):
 
 				print(pm1, pm2, pt, pubt, pkpt, pkpdv, pkpubt, pdv)
 				psum = (pm1 + pm2 + pt + pubt + pkpt + pkpdv + pkpubt + pdv)
-				psum = float('%.1f' % psum)
+				psum = abs(float('%.1f' % psum))
 				# четвертый набор расчетов
 				pgd = 1100 * 9.8 * glubina + (pkpt + pkpdv + pkpubt) * 1000000
 				pgd = float('%.1f' % (pgd * 0.000001))
