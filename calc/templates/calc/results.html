@@ -11,13 +11,13 @@
                 <div class="row">
                     <div class="col-xl-6 col-lg-6 col-md-12">
                         Для бурильных труб<br>
-                        He<sub>т</sub> = {{ result.het }} * 10<sup>5</sup><br>
-                        Re<sub>т</sub> = {{ result.ret }} * 10<sup>3</sup><br>
+                        He<sub>т</sub> = {% autoescape off %}{{ result.het }}{% endautoescape %}<br>
+                        Re<sub>т</sub> = {% autoescape off %}{{ result.ret }}{% endautoescape %}<br>
                     </div>
                     <div class="col-xl-6 col-lg-6 col-md-12">
                         Для кольцевого пространства<br>
-                        He<sub>к.п</sub> = {{ result.hekp }} * 10<sup>5</sup><br>
-                        Re<sub>к.п</sub> = {{ result.rekp }} * 10<sup>3</sup><br>
+                        He<sub>к.п</sub> = {% autoescape off %}{{ result.hekp }}{% endautoescape %}<br>
+                        Re<sub>к.п</sub> = {% autoescape off %}{{ result.rekp }}{% endautoescape %}<br>
                     </div>
                 </div>
             </p>

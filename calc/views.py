@@ -70,19 +70,19 @@ def result(request, res_id=None):
 				rekp = abs((4 * q * 1100) / (3.14 * (dgidromotor + d_bt) * 0.014))
 
 				if het > 100000:
-					het = '%.2f' % (het * 0.00001)
+					het = '%.2f * 10<sup>5</sup>' % (het * 0.00001)
 				else:
 					het = '%.3f' % het
 				if ret > 10000:
-					ret = '%.1f' % (ret * 0.001)
+					ret = '%.1f * 10<sup>3</sup>' % (ret * 0.001)
 				else:
 					ret = '%.3f' % ret
 				if hekp > 100000:
-					hekp = '%.2f' % (hekp * 0.00001)
+					hekp = '%.2f * 10<sup>5</sup>' % (hekp * 0.00001)
 				else:
 					hekp = '%.3f' % hekp
 				if rekp > 10000:
-					rekp = '%.1f' % (rekp * 0.001)
+					rekp = '%.1f * 10<sup>3</sup>' % (rekp * 0.001)
 				else:
 					rekp = '%.3f' % rekp
 
