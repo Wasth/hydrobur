@@ -130,7 +130,7 @@ def result(request, res_id=None):
 					dn_tmp = 0.013
 
 				pdf = (8 * 1100 * (nasos.qd ** 2)) / (3.14 ** 2 * 3 ** 2 * 0.92 ** 2 * dn_tmp ** 4)*0.000001
-				pdf = float('%.2f'%pdf)
+				pdf = float('%.1f' % pdf)
 				data = {
 					'author': request.user.username,
 					'result_datetime': datetime.datetime.now(),

@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7092d6f9-cccc-4b1e-bcd8-947024c9f326" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc/templates/calc/results.html" beforeDir="false" afterPath="$PROJECT_DIR$/calc/templates/calc/results.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calc/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -69,8 +66,8 @@
       <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/calc/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+            <state relative-caret-position="306">
+              <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -129,8 +126,8 @@
         <option value="$PROJECT_DIR$/calc/templates/calc/history.html" />
         <option value="$PROJECT_DIR$/hydrobur/settings.py" />
         <option value="$PROJECT_DIR$/calc/models.py" />
-        <option value="$PROJECT_DIR$/calc/views.py" />
         <option value="$PROJECT_DIR$/calc/templates/calc/results.html" />
+        <option value="$PROJECT_DIR$/calc/views.py" />
       </list>
     </option>
   </component>
@@ -576,8 +573,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/calc/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="84" column="43" selection-start-line="84" selection-start-column="43" selection-end-line="84" selection-end-column="43" />
+        <state relative-caret-position="306">
+          <caret line="132" column="37" selection-start-line="132" selection-start-column="37" selection-end-line="132" selection-end-column="37" />
         </state>
       </provider>
     </entry>
