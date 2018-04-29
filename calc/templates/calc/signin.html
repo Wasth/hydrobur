@@ -13,9 +13,9 @@
 				{% endfor %}
 			{% endif %}
 			<label>Логин</label>
-			<input type="text" class='form-control' name="login">
+			<input type="text" class='form-control' name="login" required>
 			<label>Пароль</label>
-			<input type="password" class='form-control' name="password">
+			<input type="password" class='form-control' name="password" required>
 			<button class="btn btn-primary float-right mt-3" type="submit">Войти</button>
 			<a href="{% url 'signup' %}" class='float-right mt-4 mr-3'>Регистрация</a>
 		</form>

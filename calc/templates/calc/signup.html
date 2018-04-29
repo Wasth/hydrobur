@@ -13,13 +13,13 @@
 				{% endfor %}
 			{% endif %}
 			<label>Логин</label>
-			<input type="text" class='form-control' name="login">
+			<input type="text" class='form-control' name="login" required>
 			<label>E-mail</label>
-			<input type="text" class='form-control' name="email">
+			<input type="text" class='form-control' name="email" required>
 			<label>Пароль</label>
-			<input type="password" class='form-control' name="password">
+			<input type="password" class='form-control' name="password" required>
 			<label>Повторите пароль</label>
-			<input type="password" class='form-control' name="password2">
+			<input type="password" class='form-control' name="password2" required>
 			<button class="btn btn-primary float-right mt-3" type="submit">Создать аккаунт</button>
 			<a href="{% url 'signin' %}" class='float-right mt-4 mr-3'>У меня уже есть аккаунт</a>
 		</form>
