@@ -1,10 +1,11 @@
 import math, datetime
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect, Http404
 from django.contrib import auth
 from django.contrib.auth.models import User
 from django.db import IntegrityError
+from django.urls import reverse
 
 from .forms import CalcForm
 from .models import *
@@ -171,14 +172,14 @@ def history(request):
 
 def signin(request):
 	if request.user.is_authenticated:
-		return HttpResponseRedirect('/')
+		return redirect(reverse('index'))
 
 	errors = []
 	if request.method == 'POST':
 		user = auth.authenticate(username=request.POST['login'], password=request.POST['password'])
 		if user is not None:
 			auth.login(request, user)
-			return HttpResponseRedirect('/')
+			return redirect(reverse('index'))
 		else:
 			errors.append('Неправильное имя пользователя или пароль')
 	return render(request, 'calc/signin.html', {
@@ -188,7 +189,7 @@ def signin(request):
 
 def signup(request):
 	if request.user.is_authenticated:
-		return HttpResponseRedirect('/')
+		return redirect(reverse('index'))
 	errors = []
 	if request.method == 'POST':
 		if request.POST['password'] == request.POST['password2']:
@@ -197,7 +198,7 @@ def signup(request):
 			except IntegrityError:
 				errors.append('Такой пользователь уже существует')
 			else:
-				return HttpResponseRedirect('/signin')
+				return redirect(reverse('signin'))
 		else:
 			errors.append('Пароли не совпадают')
 	return render(request, 'calc/signup.html', {
@@ -207,7 +208,7 @@ def signup(request):
 
 def logout(request):
 	auth.logout(request)
-	return HttpResponseRedirect('/')
+	return redirect(reverse('index'))
 
 
 def help(request):
