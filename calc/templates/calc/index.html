@@ -25,15 +25,19 @@
 						<li class="nav-item"><a class='nav-link' href="{% url 'calc' %}">Рассчитать параметры</a></li>
 						<li class="nav-item"><a class='nav-link' href="{% url 'history' %}">История расчётов</a></li>
                         <li class="nav-item"><a class='nav-link' href="{% url 'help' %}">Помощь</a></li>
-						<li class="nav-item"><a class='nav-link' href="{% url 'logout' %}">Выйти из аккаунта({{ user.username }})</a></li>
 					</ul>
+                    <ul class="navbar-nav justify-content-end">
+						<li class="nav-item"><a class='nav-link' href="{% url 'logout' %}">Выйти из аккаунта({{ user.username }})</a></li>
+                    </ul>
                     {% else %}
                     <ul class='navbar-nav mr-auto'>
 						<li class="nav-item"><a class="nav-link" href="{% url 'index' %}">Главная</a></li>
                         <li class="nav-item"><a class='nav-link' href="{% url 'help' %}">Помощь</a></li>
-						<li class="nav-item"><a class='nav-link' href="{% url 'signup' %}">Регистрация</a></li>
-						<li class="nav-item"><a class='nav-link' href="{% url 'signin' %}">Авторизация</a></li>
+
 					</ul>
+                    <ul class="navbar-nav justify-content-end">
+                        <li class="nav-right"><a class='nav-link' href="{% url 'signin' %}">Вход</a></li>
+                    </ul>
                     {% endif %}
 				</div>	
 			
