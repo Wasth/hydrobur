@@ -9,3 +9,5 @@ admin.site.register(models.Vedtruba)
 
 admin.site.register(models.Nasos)
 admin.site.register(models.Turbobur)
+
+admin.site.register(models.Result)
